@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flat119 - Tu espacio ideal en Bogotá. Apartamentos tipo estudio modernos y completamente equipados en el corazón de la ciudad.">
+    <meta name="keywords" content="Flat119, apartamentos Bogotá, estudio Bogotá, alojamiento temporal, hotel boutique">
+    <title>Flat119 - Tu Espacio Ideal en Bogotá</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="images/IMG-20250613-WA0021.jpg" alt="Flat119 Logo" style="height: 50px; object-fit: contain;">
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Inicio</a>
+                <a href="#rooms" class="nav-link">Habitaciones</a>
+                <a href="#amenities" class="nav-link">Servicios</a>
+                <a href="#location" class="nav-link">Ubicación</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+                <a href="#" class="nav-link booking-btn">Reservar</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" style="background-image: url('images/IMG-20250613-WA0025.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Bienvenido a Flat119</h2>
+            <p class="hero-subtitle">Tu nuevo espacio ideal en el corazón de Bogotá</p>
+            <div class="hero-buttons">
+                <a href="#rooms" class="btn btn-primary">Ver Habitaciones</a>
+                <a href="#contact" class="btn btn-secondary">Contactar</a>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature">
+                <i class="fas fa-wifi"></i>
+                <span>WiFi Gratis</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-parking"></i>
+                <span>Parqueadero</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <span>Seguridad 24/7</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking Bar -->
+    <section class="booking-bar">
+        <div class="container">
+            <form class="booking-form">
+                <div class="form-group">
+                    <label>Check-in</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Check-out</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Huéspedes</label>
+                    <select class="form-control">
+                        <option>1 Persona</option>
+                        <option>2 Personas</option>
+                        <option>3 Personas</option>
+                        <option>4 Personas</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-booking">Verificar Disponibilidad</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestras Habitaciones</h2>
+                <p>Espacios diseñados para tu comodidad y confort</p>
+            </div>
+            <div class="rooms-grid">
+                <!-- Room 1 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="images/IMG-20250613-WA0040.jpg" alt="Habitación Estándar">
+                        <div class="room-badge">Más Popular</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Estándar</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-user-friends"></i> 2 Personas</span>
+                            <span><i class="fas fa-bed"></i> Cama Queen</span>
+                            <span><i class="fas fa-expand"></i> 25m²</span>
+                        </div>
+                        <p class="room-description">Ideal para parejas o viajeros solos. Incluye todas las comodidades esenciales.</p>
+                        <div class="room-price">
+                            <span class="price-amount">$150.000</span>
+                            <span class="price-period">COP / noche</span>
+                        </div>
+                        <div class="room-special">
+                            <i class="fas fa-tag"></i> Estancia prolongada: desde $160.000 COP
+                        </div>
+                        <button class="btn btn-room">Reservar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="images/IMG-20250613-WA0026.jpg" alt="Habitación Superior">
+                    </div>
+                    <div class="room-content">
+                        <h3>Superior</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-users"></i> 3 Personas</span>
+                            <span><i class="fas fa-bed"></i> Cama King</span>
+                            <span><i class="fas fa-expand"></i> 35m²</span>
+                        </div>
+                        <p class="room-description">Espaciosa y luminosa, perfecta para familias pequeñas o grupos de amigos.</p>
+                        <div class="room-price">
+                            <span class="price-amount">$220.000</span>
+                            <span class="price-period">COP / noche</span>
+                        </div>
+                        <button class="btn btn-room">Reservar Ahora</button>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="images/IMG-20250613-WA0041.jpg" alt="Suite Ejecutiva">
+                        <div class="room-badge badge-luxury">Premium</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Suite Ejecutiva</h3>
+                        <div class="room-features">
+                            <span><i class="fas fa-users"></i> 4 Personas</span>
+                            <span><i class="fas fa-bed"></i> 2 Camas Queen</span>
+                            <span><i class="fas fa-expand"></i> 50m²</span>
+                        </div>
+                        <p class="room-description">Nuestra suite más exclusiva con sala de estar separada y vistas panorámicas.</p>
+                        <div class="room-price">
+                            <span class="price-amount">$350.000</span>
+                            <span class="price-period">COP / noche</span>
+                        </div>
+                        <button class="btn btn-room">Reservar Ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios y Comodidades</h2>
+                <p>Todo lo que necesitas para una estancia perfecta</p>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Cocina Equipada</h3>
+                    <p>Cocina completa con electrodomésticos modernos y utensilios</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Smart TV</h3>
+                    <p>Televisores inteligentes con acceso a plataformas de streaming</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Limpieza Diaria</h3>
+                    <p>Servicio de limpieza profesional todos los días</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>WiFi Alta Velocidad</h3>
+                    <p>Internet de fibra óptica en todas las habitaciones</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Aire Acondicionado</h3>
+                    <p>Control de temperatura individual en cada habitación</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Caja Fuerte</h3>
+                    <p>Caja de seguridad en cada habitación para tus objetos de valor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Espacios</h2>
+                <p>Descubre cada rincón de Flat119</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/IMG-20250613-WA0035.jpg" alt="Lobby Flat119">
+                    <div class="gallery-overlay">
+                        <h3>Lobby Principal</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/IMG-20250613-WA0027.jpg" alt="Terraza Flat119">
+                    <div class="gallery-overlay">
+                        <h3>Terraza con Vista</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/IMG-20250613-WA0023.jpg" alt="Área de Trabajo">
+                    <div class="gallery-overlay">
+                        <h3>Espacio de Trabajo</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/IMG-20250613-WA0032.jpg" alt="Rooftop">
+                    <div class="gallery-overlay">
+                        <h3>Rooftop Garden</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ubicación Privilegiada</h2>
+                <p>En el corazón de Bogotá, cerca de todo lo que necesitas</p>
+            </div>
+            <div class="location-content">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+                <div class="location-info">
+                    <h3>Puntos de Interés Cercanos</h3>
+                    <div class="poi-list">
+                        <div class="poi-item">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <h4>Universidades</h4>
+                                <p>Universidad Javeriana, Universidad del Rosario a menos de 10 min</p>
+                            </div>
+                        </div>
+                        <div class="poi-item">
+                            <i class="fas fa-shopping-bag"></i>
+                            <div>
+                                <h4>Centro Comercial Unicentro</h4>
+                                <p>El centro comercial más grande de Bogotá a 5 minutos</p>
+                            </div>
+                        </div>
+                        <div class="poi-item">
+                            <i class="fas fa-tree"></i>
+                            <div>
+                                <h4>Parque de la 93</h4>
+                                <p>Zona verde y de entretenimiento a 8 minutos</p>
+                            </div>
+                        </div>
+                        <div class="poi-item">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>Zona Rosa</h4>
+                                <p>Los mejores restaurantes y vida nocturna a 10 minutos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Carrera 7 #119-45, Bogotá, Colombia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos tus dudas más comunes</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es el horario de check-in y check-out?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El check-in es a partir de las 3:00 PM y el check-out hasta las 12:00 PM. Podemos ofrecer flexibilidad según disponibilidad.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Aceptan mascotas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, aceptamos mascotas pequeñas (hasta 10kg) con un cargo adicional de $30.000 COP por noche.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Incluyen servicio de transporte al aeropuerto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ofrecemos servicio de transporte al aeropuerto con costo adicional. El precio varía según el horario y tipo de vehículo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué incluye la tarifa de estancia prolongada?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Las estancias de más de 7 días incluyen tarifas especiales, limpieza diaria, servicios públicos y acceso a todas las amenidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" style="background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('images/IMG-20250613-WA0030.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contáctanos</h2>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+57 300 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>reservas@flat119.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Carrera 7 #119-45<br>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Domingo<br>8:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-row">
+                            <input type="text" placeholder="Nombre completo" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <input type="tel" placeholder="Teléfono">
+                        <select>
+                            <option value="">Tipo de consulta</option>
+                            <option value="reserva">Reserva</option>
+                            <option value="informacion">Información general</option>
+                            <option value="eventos">Eventos especiales</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Flat<span>119</span></h3>
+                    <p>Tu hogar lejos de casa en el corazón de Bogotá. Espacios modernos y confortables para estancias cortas y largas.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#rooms">Habitaciones</a></li>
+                        <li><a href="#amenities">Servicios</a></li>
+                        <li><a href="#location">Ubicación</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Política de Cancelación</a></li>
+                        <li><a href="#">Protocolo COVID-19</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Suscríbete para recibir ofertas especiales</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Flat119. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/573001234567?text=Hola!%20Quiero%20hacer%20una%20reserva%20en%20Flat119" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Reserva por WhatsApp!</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbA2CbmcyAXa4dBxDY5HmQ9q8BB7SdOQc&callback=initMap"></script>
+</body>
+</html>
