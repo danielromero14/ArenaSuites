@@ -255,57 +255,6 @@ h4 { font-size: 1.5rem; }
     font-size: 1.5rem;
 }
 
-/* Booking Bar */
-.booking-bar {
-    background: var(--white);
-    padding: var(--spacing-lg) 0;
-    box-shadow: var(--shadow-md);
-    position: sticky;
-    top: 80px;
-    z-index: 100;
-}
-
-.booking-form {
-    display: flex;
-    gap: var(--spacing-md);
-    align-items: flex-end;
-}
-
-.form-group {
-    flex: 1;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    color: var(--dark-gray);
-    font-weight: 500;
-}
-
-.form-control {
-    width: 100%;
-    padding: var(--spacing-sm);
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--light-blue);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.btn-booking {
-    background: var(--light-blue);
-    color: var(--white);
-    white-space: nowrap;
-}
-
-.btn-booking:hover {
-    background: var(--primary-blue);
-}
 
 /* Section Headers */
 .section-header {
@@ -964,9 +913,6 @@ h4 { font-size: 1.5rem; }
         justify-content: center;
     }
     
-    .booking-form {
-        flex-direction: column;
-    }
     
     .rooms-grid {
         grid-template-columns: 1fr;

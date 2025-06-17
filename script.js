@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Form validation
     const contactForm = document.querySelector('.contact-form form');
-    const bookingForm = document.querySelector('.booking-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -92,13 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
                 this.reset();
             }
-        });
-    }
-    
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Verificando disponibilidad...');
         });
     }
 
@@ -146,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Room booking buttons
+    // Room reservation buttons
     const roomButtons = document.querySelectorAll('.btn-room');
     roomButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -154,51 +146,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const roomName = roomCard.querySelector('h3').textContent;
             const roomPrice = roomCard.querySelector('.price-amount').textContent;
             
-            alert(`Has seleccionado ${roomName} por ${roomPrice} COP/noche. Serás redirigido al formulario de reserva.`);
-            
-            // Scroll to booking form
-            document.querySelector('.booking-bar').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
+            // WhatsApp message for room reservation
+            const message = `Hola! Me interesa reservar ${roomName} por ${roomPrice} COP/noche. ¿Podrían darme más información sobre disponibilidad?`;
+            const whatsappUrl = `https://wa.me/573001234567?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
         });
     });
 
-    // Update booking price based on selection
-    const guestsSelect = document.querySelector('.booking-form select');
-    if (guestsSelect) {
-        guestsSelect.addEventListener('change', function() {
-            const guests = parseInt(this.value);
-            let suggestedRoom = '';
-            
-            if (guests <= 2) {
-                suggestedRoom = 'Habitación Estándar';
-            } else if (guests === 3) {
-                suggestedRoom = 'Habitación Superior';
-            } else {
-                suggestedRoom = 'Suite Ejecutiva';
-            }
-            
-            console.log(`Recomendamos: ${suggestedRoom}`);
-        });
-    }
-
-    // Dynamic date validation
-    const checkInDate = document.querySelector('input[type="date"]:first-of-type');
-    const checkOutDate = document.querySelector('input[type="date"]:last-of-type');
-    
-    if (checkInDate && checkOutDate) {
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        checkInDate.min = today;
-        
-        checkInDate.addEventListener('change', function() {
-            // Set checkout minimum to day after checkin
-            const checkinDate = new Date(this.value);
-            checkinDate.setDate(checkinDate.getDate() + 1);
-            checkOutDate.min = checkinDate.toISOString().split('T')[0];
-        });
-    }
 });
 
 // Google Maps initialization
