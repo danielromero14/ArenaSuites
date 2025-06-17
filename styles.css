@@ -171,7 +171,7 @@ h4 { font-size: 1.5rem; }
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(30, 58, 138, 0.7);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -186,6 +186,8 @@ h4 { font-size: 1.5rem; }
     font-size: 4rem;
     margin-bottom: var(--spacing-sm);
     animation: fadeInUp 1s ease-out;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
@@ -359,20 +361,7 @@ h4 { font-size: 1.5rem; }
 }
 
 .room-price {
-    display: flex;
-    align-items: baseline;
-    gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-sm);
-}
-
-.price-amount {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-blue);
-}
-
-.price-period {
-    color: var(--dark-gray);
+    display: none; /* Ocultamos los precios */
 }
 
 .room-special {
@@ -384,14 +373,77 @@ h4 { font-size: 1.5rem; }
     margin-bottom: var(--spacing-md);
 }
 
+.room-amenities {
+    margin: var(--spacing-md) 0;
+}
+
+.room-amenities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.room-amenities ul li {
+    padding: var(--spacing-xs) 0;
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.room-amenities ul li i {
+    color: var(--light-blue);
+    font-size: 0.875rem;
+}
+
+.room-services {
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background: var(--sky-blue);
+    border-radius: 8px;
+}
+
+.room-services h4 {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.room-services p {
+    margin: var(--spacing-xs) 0;
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.room-services p i {
+    color: var(--light-blue);
+}
+
+.room-highlight {
+    font-weight: 500;
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
 .btn-room {
     width: 100%;
     background: var(--light-blue);
     color: var(--white);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .btn-room:hover {
     background: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Amenities Section */
@@ -451,6 +503,32 @@ h4 { font-size: 1.5rem; }
     background: var(--white);
 }
 
+.gallery-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.gallery-page {
+    min-width: 100%;
+    display: none;
+}
+
+.gallery-page.active {
+    display: block;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -495,6 +573,64 @@ h4 { font-size: 1.5rem; }
 .gallery-overlay h3 {
     color: var(--white);
     margin: 0;
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 58, 138, 0.8);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.gallery-nav:hover {
+    background: var(--primary-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav-prev {
+    left: -25px;
+}
+
+.gallery-nav-next {
+    right: -25px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--light-blue);
+    width: 30px;
+    border-radius: 6px;
+}
+
+.dot:hover {
+    background: var(--primary-blue);
 }
 
 /* Location Section */

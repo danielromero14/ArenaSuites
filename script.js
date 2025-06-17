@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Google Maps initialization
 function initMap() {
-    // Coordinates for Carrera 7 #119-45, Bogotá
-    const flat119Location = { lat: 4.7028, lng: -74.0339 };
+    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá
+    const flat119Location = { lat: 4.7027, lng: -74.0318 };
     
     // Map options
     const mapOptions = {
@@ -238,7 +238,7 @@ function initMap() {
         content: `
             <div style="padding: 10px;">
                 <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Flat119</h4>
-                <p style="margin: 0;">Carrera 7 #119-45<br>Bogotá, Colombia</p>
+                <p style="margin: 0;">Cra. 12 #119-36<br>Usaquén, Cundinamarca<br>Bogotá, Colombia</p>
             </div>
         `
     });
@@ -270,6 +270,41 @@ function initMap() {
             }
         });
     });
+}
+
+// Gallery functionality
+let currentPage = 1;
+const totalPages = 3;
+
+function showGalleryPage(page) {
+    const pages = document.querySelectorAll('.gallery-page');
+    const dots = document.querySelectorAll('.dot');
+    
+    // Validar rango
+    if (page < 1) page = totalPages;
+    if (page > totalPages) page = 1;
+    
+    // Ocultar todas las páginas
+    pages.forEach(p => p.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    
+    // Mostrar página actual
+    if (pages[page - 1]) {
+        pages[page - 1].classList.add('active');
+    }
+    if (dots[page - 1]) {
+        dots[page - 1].classList.add('active');
+    }
+    
+    currentPage = page;
+}
+
+function changeGalleryPage(direction) {
+    showGalleryPage(currentPage + direction);
+}
+
+function currentGalleryPage(page) {
+    showGalleryPage(page);
 }
 
 // Lazy loading for images
