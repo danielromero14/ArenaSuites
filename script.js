@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // WhatsApp message for room reservation
             const message = `Hola! Me interesa reservar ${roomName} por ${roomPrice} COP/noche. ¿Podrían darme más información sobre disponibilidad?`;
-            const whatsappUrl = `https://wa.me/573001234567?text=${encodeURIComponent(message)}`;
+            const whatsappUrl = `https://wa.me/573104896787?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         });
     });
@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Google Maps initialization
 function initMap() {
-    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá
-    const flat119Location = { lat: 4.7027, lng: -74.0318 };
+    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá (corrected)
+    const flat119Location = { lat: 4.7025, lng: -74.0312 };
     
     // Map options
     const mapOptions = {
@@ -238,7 +238,7 @@ function initMap() {
         content: `
             <div style="padding: 10px;">
                 <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Flat119</h4>
-                <p style="margin: 0;">Cra. 12 #119-36<br>Usaquén, Cundinamarca<br>Bogotá, Colombia</p>
+                <p style="margin: 0;">Cra. 12 #119-36<br>Unicentro, Bogotá, Colombia</p>
             </div>
         `
     });
