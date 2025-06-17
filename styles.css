@@ -292,6 +292,9 @@ h4 { font-size: 1.5rem; }
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .room-card:hover {
@@ -334,6 +337,9 @@ h4 { font-size: 1.5rem; }
 
 .room-content {
     padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .room-content h3 {
@@ -438,6 +444,7 @@ h4 { font-size: 1.5rem; }
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
+    margin-top: auto;
 }
 
 .btn-room:hover {
@@ -663,37 +670,36 @@ h4 { font-size: 1.5rem; }
     color: var(--primary-blue);
 }
 
-.poi-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+.poi-category {
     margin-bottom: var(--spacing-lg);
-}
-
-.poi-item {
-    display: flex;
-    gap: var(--spacing-md);
     padding: var(--spacing-md);
     background: var(--white);
     border-radius: 12px;
     transition: var(--transition);
 }
 
-.poi-item:hover {
-    transform: translateX(10px);
+.poi-category:hover {
+    transform: translateY(-3px);
     box-shadow: var(--shadow-md);
 }
 
-.poi-item i {
-    font-size: 1.5rem;
-    color: var(--light-blue);
-    min-width: 40px;
-    text-align: center;
+.poi-category h4 {
+    color: var(--primary-blue);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 1.1rem;
 }
 
-.poi-item h4 {
-    color: var(--primary-blue);
-    margin-bottom: 0.25rem;
+.poi-category h4 i {
+    font-size: 1.2rem;
+}
+
+.poi-category p {
+    color: var(--dark-gray);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .address-box {

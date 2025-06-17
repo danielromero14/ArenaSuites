@@ -247,28 +247,104 @@ function initMap() {
         infoWindow.open(map, marker);
     });
     
-    // Add nearby places
-    const nearbyPlaces = [
-        { position: { lat: 4.7058, lng: -74.0359 }, title: 'Universidad Javeriana' },
-        { position: { lat: 4.7000, lng: -74.0320 }, title: 'Centro Comercial Unicentro' },
-        { position: { lat: 4.6950, lng: -74.0350 }, title: 'Parque de la 93' },
-        { position: { lat: 4.7010, lng: -74.0370 }, title: 'Zona Rosa' }
+    // Points of Interest with different categories
+    const pointsOfInterest = [
+        {
+            position: { lat: 4.7028, lng: -74.0300 },
+            title: 'CC Unicentro',
+            category: 'shopping',
+            description: 'Centro Comercial Unicentro<br>Carrera 15 Calle 127<br>El primer centro comercial de Bogotá',
+            icon: '🛍️',
+            color: '#10b981'
+        },
+        {
+            position: { lat: 4.7020, lng: -74.0340 },
+            title: 'Hospital Santa Fe',
+            category: 'health',
+            description: 'Hospital Universitario Fundación Santa Fe<br>Calle 119 No. 7-75<br>Centro médico de excelencia',
+            icon: '🏥',
+            color: '#ef4444'
+        },
+        {
+            position: { lat: 4.7030, lng: -74.0290 },
+            title: 'Parque El Country',
+            category: 'recreation',
+            description: 'Parque Metropolitano El Country<br>Calle 127C con Carrera 11D<br>7 hectáreas de recreación',
+            icon: '🌳',
+            color: '#22c55e'
+        },
+        {
+            position: { lat: 4.7040, lng: -74.0280 },
+            title: 'Universidad El Bosque',
+            category: 'education',
+            description: 'Universidad El Bosque<br>Av. Carrera 9 No. 131A-02<br>Educación superior de calidad',
+            icon: '🎓',
+            color: '#3b82f6'
+        }
     ];
     
-    nearbyPlaces.forEach(place => {
-        new google.maps.Marker({
-            position: place.position,
+    // Add markers for points of interest
+    pointsOfInterest.forEach(poi => {
+        const marker = new google.maps.Marker({
+            position: poi.position,
             map: map,
-            title: place.title,
+            title: poi.title,
             icon: {
                 path: google.maps.SymbolPath.CIRCLE,
-                scale: 6,
-                fillColor: "#fbbf24",
-                fillOpacity: 0.8,
+                scale: 8,
+                fillColor: poi.color,
+                fillOpacity: 0.9,
                 strokeColor: "#ffffff",
-                strokeWeight: 1
+                strokeWeight: 2
             }
         });
+        
+        const infoWindow = new google.maps.InfoWindow({
+            content: `
+                <div style="padding: 10px; max-width: 200px;">
+                    <h4 style="margin: 0 0 5px 0; color: ${poi.color};">${poi.icon} ${poi.title}</h4>
+                    <p style="margin: 0; font-size: 13px;">${poi.description}</p>
+                </div>
+            `
+        });
+        
+        marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+        });
+    });
+    
+    // Add Usaquén gastronomic zone as a polygon
+    const usaquenZone = [
+        { lat: 4.6980, lng: -74.0380 },
+        { lat: 4.7000, lng: -74.0380 },
+        { lat: 4.7000, lng: -74.0320 },
+        { lat: 4.6980, lng: -74.0320 }
+    ];
+    
+    const gastronomicZone = new google.maps.Polygon({
+        paths: usaquenZone,
+        strokeColor: '#fbbf24',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#fbbf24',
+        fillOpacity: 0.2
+    });
+    
+    gastronomicZone.setMap(map);
+    
+    // Add info window for gastronomic zone
+    const zoneInfoWindow = new google.maps.InfoWindow({
+        content: `
+            <div style="padding: 10px;">
+                <h4 style="margin: 0 0 5px 0; color: #fbbf24;">🍽️ Zona Gastronómica Usaquén</h4>
+                <p style="margin: 0; font-size: 13px;">Más de 50 restaurantes<br>Calles 117-121, Carreras 4-7<br>Mercado artesanal domingos</p>
+            </div>
+        `,
+        position: { lat: 4.6990, lng: -74.0350 }
+    });
+    
+    gastronomicZone.addListener('click', function() {
+        zoneInfoWindow.open(map);
     });
 }
 
