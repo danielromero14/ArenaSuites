@@ -3,7 +3,7 @@
 Sitio web moderno y elegante para Flat119, alojamiento premium en Bogotá, Colombia.
 
 ## 🌐 Demo en Vivo
-https://flat119.github.io
+https://flat119.github.io/web
 
 ## 🏨 Características
 
