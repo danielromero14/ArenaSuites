@@ -407,6 +407,10 @@ h4 { font-size: 1.5rem; }
     padding: var(--spacing-md);
     background: var(--sky-blue);
     border-radius: 8px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .room-services h4 {
@@ -665,40 +669,54 @@ h4 { font-size: 1.5rem; }
     height: 100%;
 }
 
-.location-info h3 {
-    margin-bottom: var(--spacing-lg);
-    color: var(--primary-blue);
+.location-info {
+    height: 500px;
+    display: flex;
+    align-items: center;
 }
 
-.poi-category {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
-    background: var(--white);
+.poi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray);
     border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.poi-item {
+    background: var(--white);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     transition: var(--transition);
 }
 
-.poi-category:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+.poi-item:hover {
+    background: var(--sky-blue);
+    transform: scale(1.02);
 }
 
-.poi-category h4 {
+.poi-item i {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.poi-item h4 {
     color: var(--primary-blue);
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    font-size: 1.1rem;
+    margin: var(--spacing-xs) 0;
+    font-size: 1rem;
 }
 
-.poi-category h4 i {
-    font-size: 1.2rem;
-}
-
-.poi-category p {
+.poi-item p {
     color: var(--dark-gray);
-    line-height: 1.6;
+    font-size: 0.875rem;
     margin: 0;
 }
 
@@ -1009,6 +1027,15 @@ h4 { font-size: 1.5rem; }
 @media (max-width: 1024px) {
     .location-content {
         grid-template-columns: 1fr;
+    }
+    
+    .location-info {
+        height: auto;
+        margin-top: var(--spacing-lg);
+    }
+    
+    .poi-grid {
+        height: auto;
     }
     
     .contact-content {
