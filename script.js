@@ -266,7 +266,7 @@ function initMap() {
             color: '#ef4444'
         },
         {
-            position: { lat: 4.7043, lng: -74.0296 },
+            position: { lat: 4.7058313, lng: -74.0380692 },
             title: 'Parque El Country',
             category: 'recreation',
             description: 'Parque Metropolitano El Country<br>Calle 127C con Carrera 11D<br>7 hectáreas de recreación',
@@ -274,7 +274,7 @@ function initMap() {
             color: '#22c55e'
         },
         {
-            position: { lat: 4.7070, lng: -74.0275 },
+            position: { lat: 4.7103137, lng: -74.0322043 },
             title: 'Universidad El Bosque',
             category: 'education',
             description: 'Universidad El Bosque<br>Av. Carrera 9 No. 131A-02<br>Educación superior de calidad',
