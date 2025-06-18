@@ -250,7 +250,7 @@ function initMap() {
     // Points of Interest with different categories
     const pointsOfInterest = [
         {
-            position: { lat: 4.7055, lng: -74.0326 },
+            position: { lat: 4.7021426, lng: -74.0411165 },
             title: 'CC Unicentro',
             category: 'shopping',
             description: 'Centro Comercial Unicentro<br>Carrera 15 Calle 127<br>El primer centro comercial de Bogotá',
@@ -258,7 +258,7 @@ function initMap() {
             color: '#10b981'
         },
         {
-            position: { lat: 4.7006, lng: -74.0350 },
+            position: { lat: 4.6956426, lng: -74.033027 },
             title: 'Hospital Santa Fe',
             category: 'health',
             description: 'Hospital Universitario Fundación Santa Fe<br>Calle 119 No. 7-75<br>Centro médico de excelencia',
