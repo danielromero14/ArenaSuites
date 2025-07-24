@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://danielromero14.github.io/flat119.github.io/sitemap.xml
