@@ -165,3 +165,80 @@ Al intentar añadir el dominio `flat119.com` a la nueva cuenta de Google Workspa
 5.  **Finalizar la Verificación en Google:**
     *   Espera 5-10 minutos.
     *   Vuelve a la Consola de Administración de Google y haz clic en el botón **"Verificar"**. Esto desbloqueará el dominio y te permitirá crear tu correo profesional.
+
+---
+
+## Obstáculo 3: Google Rechaza el Enlace de Reservas de Terceros
+
+Al intentar añadir el enlace de reservas de Cloudbeds (`https://hotels.cloudbeds.com/reservation/AcciF5`) en la sección de "Reservas" del Perfil de Negocio de Google, la plataforma lo rechaza.
+
+*   **Descripción del Error:** GMB muestra un error o no permite guardar el enlace, sugiriendo un formato de dominio propio (ej: `tuempresa.com/reservas`).
+*   **Causa Raíz:** Google prioriza la confianza y la consistencia de la marca. Al detectar un enlace que apunta a un dominio de terceros (`hotels.cloudbeds.com`) en lugar del dominio principal del negocio (`flat119.com`), lo bloquea por seguridad y para evitar la suplantación de identidad.
+*   **Solución: Crear una Redirección 301 desde el Dominio Propio.**
+
+### **Pasos para la Solución (Pendiente):**
+
+1.  **Acceder al Proveedor de Dominio (Wix):**
+    *   Iniciar sesión en el panel de control de Wix.
+2.  **Crear la Redirección:**
+    *   Navegar a la sección de **"Marketing y SEO"** y encontrar **"Redirecciones de URL"**.
+    *   Crear una **"Nueva Redirección"** con la siguiente configuración:
+        *   **Enlace de Origen:** `/reservar`
+        *   **Enlace de Destino:** `https://hotels.cloudbeds.com/reservation/AcciF5`
+        *   **Tipo de Redirección:** `301 (Permanente)`
+3.  **Actualizar el Perfil de GMB:**
+    *   Esperar unos minutos a que la redirección se active.
+    *   Volver al panel de GMB y, en la sección de "Reservas", introducir el nuevo enlace: **`https://flat119.com/reservar`**.
+    *   Google aceptará este enlace, ya que pertenece al dominio verificado del negocio.
+
+---
+
+## 31 de Julio de 2025
+
+**Tarea:** Implementación y optimización del mapa de Google en `flat119.github.io`.
+
+**Hitos Alcanzados:**
+
+1.  **Obtención de API Key:** Se generó y obtuvo una API Key de Google Maps Platform.
+2.  **Implementación del Mapa Básico:** Se actualizó `index.html` para incluir la API Key y se creó la función `initMap` en `script.js`.
+3.  **Ajuste Fino de Coordenadas:** Se corrigió y ajustó la latitud y longitud del marcador de `Flat119` a su ubicación exacta (`4.699222885850154, -74.03910493535466`) para máxima precisión.
+4.  **Puntos de Interés (POIs):** Se añadieron y verificaron las coordenadas de puntos de interés estratégicos como la Universidad El Bosque.
+5.  **Zona Interactiva de Restaurantes:**
+    *   Se definieron las coordenadas para un polígono que cubre la zona gastronómica de Usaquén.
+    *   Se implementó la funcionalidad en `script.js` para dibujar dicho polígono y utilizar la Places API para buscar y mostrar todos los restaurantes dentro de esa área con marcadores personalizados.
+
+**Tarea:** Optimización SEO para la palabra clave "hoteles unicentro".
+
+**Hitos Alcanzados:**
+
+1.  **Análisis y Reversión:** Se revirtieron los cambios de texto visibles en la web para mantener la estética original.
+2.  **Optimización de Metadatos (Estrategia Invisible):**
+    *   Se enriquecieron los `meta keywords` con términos como "hotel unicentro" y "alternativa hotel".
+    *   Se modificaron los datos estructurados (schema.org) en el `ld+json` para incluir la frase "Somos la mejor alternativa a un hotel en Unicentro", enviando una señal fuerte y directa a Google sin afectar el contenido visible.
+
+**Tarea:** Optimización y resolución de problemas del Perfil de Negocio en Google (GMB).
+
+**Hitos Alcanzados:**
+
+1.  **Verificación de Perfil:** Se confirmó que el perfil de GMB está verificado y no requiere introducción de PIN.
+2.  **Optimización de Contenido:** Se proporcionó una descripción de negocio optimizada para ser añadida al perfil.
+3.  **Diagnóstico de Problema de Ubicación:** Se identificó que la asociación incorrecta "Ubicado en: Casa Regis Bogota" se debe a una imprecisión del marcador en el mapa.
+4.  **Plan de Acción:** Se proporcionaron instrucciones claras para corregir la posición del marcador en el mapa de GMB como solución principal al problema de la asociación incorrecta.
+
+**Estado General:** Proyecto listo para actualizar los cambios en el repositorio y continuar con la optimización del perfil de GMB.
+
+---
+
+## Aclaración Estratégica: Anuncios en Google My Business
+
+**Consulta:** Durante la optimización del perfil de GMB, apareció una opción para "completar un anuncio". Se generó la duda de si este proceso tenía un costo asociado.
+
+**Diagnóstico:** La opción para crear anuncios dentro del panel de GMB es una integración con la plataforma de publicidad **Google Ads**. No es una función nativa de GMB.
+
+**Resolución y Estrategia:**
+
+*   **Costo:** La creación y diseño del anuncio (redacción, selección de palabras clave, etc.) es **totalmente gratuita**.
+*   **Punto de Gasto:** El costo solo se incurre si el usuario completa los pasos finales del proceso, que son:
+    1.  Establecer un **presupuesto** (diario o total).
+    2.  Introducir **datos de pago** (tarjeta de crédito).
+*   **Recomendación Estratégica:** Se ha decidido **ignorar esta opción por el momento**. La prioridad actual es maximizar la visibilidad **orgánica (gratuita)** a través de la optimización completa del perfil de GMB y el SEO de la página web. La publicidad de pago (Google Ads) se considerará como una estrategia futura, una vez que la base orgánica esté consolidada.

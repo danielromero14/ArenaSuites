@@ -157,12 +157,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Google Maps initialization
 function initMap() {
-    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá (exact from Google Maps)
-    const flat119Location = { lat: 4.6991001, lng: -74.0390657 };
+    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá
+    const flat119Location = { lat: 4.699222885850154, lng: -74.03910493535466 };
     
     // Map options
     const mapOptions = {
-        zoom: 16,
+        zoom: 15,
         center: flat119Location,
         styles: [
             {
@@ -217,7 +217,7 @@ function initMap() {
     // Create map
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
-    // Custom marker
+    // Custom marker for Flat119
     const marker = new google.maps.Marker({
         position: flat119Location,
         map: map,
@@ -233,12 +233,12 @@ function initMap() {
         }
     });
     
-    // Info window
+    // Info window for Flat119
     const infoWindow = new google.maps.InfoWindow({
         content: `
             <div style="padding: 10px;">
                 <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Flat119</h4>
-                <p style="margin: 0;">Cra. 12 #119-36<br>Unicentro, Bogotá, Colombia</p>
+                <p style="margin: 0;">Cra. 12 #119-36<br>Usaquén, Bogotá, Colombia</p>
             </div>
         `
     });
@@ -247,21 +247,21 @@ function initMap() {
         infoWindow.open(map, marker);
     });
     
-    // Points of Interest with different categories
+    // Points of Interest with strategic value
     const pointsOfInterest = [
         {
             position: { lat: 4.7021426, lng: -74.0411165 },
-            title: 'CC Unicentro',
+            title: 'C.C. Unicentro',
             category: 'shopping',
-            description: 'Centro Comercial Unicentro<br>Carrera 15 Calle 127<br>El primer centro comercial de Bogotá',
+            description: 'Principal centro comercial de la zona.',
             icon: '🛍️',
             color: '#10b981'
         },
         {
             position: { lat: 4.6956426, lng: -74.033027 },
-            title: 'Hospital Santa Fe',
+            title: 'Fundación Santa Fe',
             category: 'health',
-            description: 'Hospital Universitario Fundación Santa Fe<br>Calle 119 No. 7-75<br>Centro médico de excelencia',
+            description: 'Hospital de primer nivel.',
             icon: '🏥',
             color: '#ef4444'
         },
@@ -269,15 +269,15 @@ function initMap() {
             position: { lat: 4.7058313, lng: -74.0380692 },
             title: 'Parque El Country',
             category: 'recreation',
-            description: 'Parque Metropolitano El Country<br>Calle 127C con Carrera 11D<br>7 hectáreas de recreación',
+            description: 'Amplia zona verde para recreación.',
             icon: '🌳',
             color: '#22c55e'
         },
         {
-            position: { lat: 4.7103137, lng: -74.0322043 },
+            position: { lat: 4.710423375781142, lng: -74.03220435970638 },
             title: 'Universidad El Bosque',
             category: 'education',
-            description: 'Universidad El Bosque<br>Av. Carrera 9 No. 131A-02<br>Educación superior de calidad',
+            description: 'Educación superior de calidad.',
             icon: '🎓',
             color: '#3b82f6'
         }
@@ -285,7 +285,7 @@ function initMap() {
     
     // Add markers for points of interest
     pointsOfInterest.forEach(poi => {
-        const marker = new google.maps.Marker({
+        const poiMarker = new google.maps.Marker({
             position: poi.position,
             map: map,
             title: poi.title,
@@ -299,7 +299,7 @@ function initMap() {
             }
         });
         
-        const infoWindow = new google.maps.InfoWindow({
+        const poiInfoWindow = new google.maps.InfoWindow({
             content: `
                 <div style="padding: 10px; max-width: 200px;">
                     <h4 style="margin: 0 0 5px 0; color: ${poi.color};">${poi.icon} ${poi.title}</h4>
@@ -308,44 +308,72 @@ function initMap() {
             `
         });
         
-        marker.addListener('click', function() {
-            infoWindow.open(map, marker);
+        poiMarker.addListener('click', function() {
+            poiInfoWindow.open(map, poiMarker);
         });
     });
-    
-    // Add Usaquén gastronomic zone as a polygon
-    const usaquenZone = [
-        { lat: 4.6945, lng: -74.0325 },
-        { lat: 4.6945, lng: -74.0305 },
-        { lat: 4.6905, lng: -74.0305 },
-        { lat: 4.6905, lng: -74.0325 }
+
+    // Restaurant Zone Polygon
+    const restaurantZoneCoords = [
+        { lat: 4.697763876061724, lng: -74.03041742415633 },
+        { lat: 4.696305482409698, lng: -74.02874131240979 },
+        { lat: 4.693988165901123, lng: -74.03283812616426 },
+        { lat: 4.693443774572404, lng: -74.03012976968962 }
     ];
-    
-    const gastronomicZone = new google.maps.Polygon({
-        paths: usaquenZone,
-        strokeColor: '#fbbf24',
+
+    const restaurantZone = new google.maps.Polygon({
+        paths: restaurantZoneCoords,
+        strokeColor: "#fbbf24",
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#fbbf24',
-        fillOpacity: 0.2
+        fillColor: "#fbbf24",
+        fillOpacity: 0.25,
+        map: map
     });
-    
-    gastronomicZone.setMap(map);
-    
-    // Add info window for gastronomic zone
-    const zoneInfoWindow = new google.maps.InfoWindow({
-        content: `
-            <div style="padding: 10px;">
-                <h4 style="margin: 0 0 5px 0; color: #fbbf24;">🍽️ Zona Gastronómica Usaquén</h4>
-                <p style="margin: 0; font-size: 13px;">Más de 50 restaurantes<br>Calles 117-121, Carreras 4-7<br>Mercado artesanal domingos</p>
-            </div>
-        `,
-        position: { lat: 4.6925, lng: -74.0315 }
+
+    // Find restaurants within the polygon
+    const placesService = new google.maps.places.PlacesService(map);
+    const request = {
+        bounds: new google.maps.LatLngBounds(),
+        type: ['restaurant']
+    };
+
+    restaurantZone.getPaths().forEach(function(path) {
+        path.forEach(function(latLng) {
+            request.bounds.extend(latLng);
+        });
     });
-    
-    gastronomicZone.addListener('click', function() {
-        zoneInfoWindow.open(map);
+
+    placesService.nearbySearch(request, function(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (let i = 0; i < results.length; i++) {
+                // Check if the place is within the polygon
+                if (google.maps.geometry.poly.containsLocation(results[i].geometry.location, restaurantZone)) {
+                    createRestaurantMarker(results[i]);
+                }
+            }
+        }
     });
+
+    function createRestaurantMarker(place) {
+        const marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            title: place.name,
+            icon: {
+                url: 'http://maps.google.com/mapfiles/ms/icons/restaurant.png',
+                scaledSize: new google.maps.Size(32, 32)
+            }
+        });
+
+        const infowindow = new google.maps.InfoWindow({
+            content: `<strong>${place.name}</strong><br>Rating: ${place.rating || 'N/A'}`
+        });
+
+        marker.addListener("click", () => {
+            infowindow.open(map, marker);
+        });
+    }
 }
 
 // Gallery functionality
