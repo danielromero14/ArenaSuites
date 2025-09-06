@@ -157,13 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Google Maps initialization
 function initMap() {
-    // Coordinates for Cra. 12 #119-36, Usaquén, Bogotá
-    const flat119Location = { lat: 4.699222885850154, lng: -74.03910493535466 };
-    
+    // Coordinates for Carrera 30 No. 63-57 Bogotá, Colombia
+    const arenaSuitesLocation = { lat: 4.652594284550544, lng: -74.07891573349986 };
+
     // Map options
     const mapOptions = {
         zoom: 15,
-        center: flat119Location,
+        center: arenaSuitesLocation,
         styles: [
             {
                 "featureType": "all",
@@ -213,15 +213,15 @@ function initMap() {
             }
         ]
     };
-    
+
     // Create map
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    
-    // Custom marker for Flat119
+
+    // Custom marker for Arena Suites
     const marker = new google.maps.Marker({
-        position: flat119Location,
+        position: arenaSuitesLocation,
         map: map,
-        title: 'Flat119',
+        title: 'Arena Suites',
         animation: google.maps.Animation.DROP,
         icon: {
             path: google.maps.SymbolPath.CIRCLE,
@@ -232,57 +232,41 @@ function initMap() {
             strokeWeight: 2
         }
     });
-    
-    // Info window for Flat119
+
+    // Info window for Arena Suites
     const infoWindow = new google.maps.InfoWindow({
         content: `
             <div style="padding: 10px;">
-                <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Flat119</h4>
-                <p style="margin: 0;">Cra. 12 #119-36<br>Usaquén, Bogotá, Colombia</p>
+                <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Arena Suites</h4>
+                <p style="margin: 0;">Carrera 30 #63-57<br>Bogotá, Colombia</p>
             </div>
         `
     });
-    
+
     marker.addListener('click', function() {
         infoWindow.open(map, marker);
     });
-    
+
     // Points of Interest with strategic value
     const pointsOfInterest = [
         {
-            position: { lat: 4.7021426, lng: -74.0411165 },
-            title: 'C.C. Unicentro',
-            category: 'shopping',
-            description: 'Principal centro comercial de la zona.',
-            icon: '🛍️',
+            position: { lat: 4.649224, lng: -74.077376 },
+            title: 'Movistar Arena',
+            category: 'entertainment',
+            description: 'Centro de eventos y espectáculos.',
+            icon: '🏟️',
             color: '#10b981'
         },
         {
-            position: { lat: 4.6956426, lng: -74.033027 },
-            title: 'Fundación Santa Fe',
-            category: 'health',
-            description: 'Hospital de primer nivel.',
-            icon: '🏥',
+            position: { lat: 4.645833, lng: -74.0775 },
+            title: 'Estadio El Campín',
+            category: 'sports',
+            description: 'Principal estadio de fútbol de Bogotá.',
+            icon: '⚽',
             color: '#ef4444'
-        },
-        {
-            position: { lat: 4.7058313, lng: -74.0380692 },
-            title: 'Parque El Country',
-            category: 'recreation',
-            description: 'Amplia zona verde para recreación.',
-            icon: '🌳',
-            color: '#22c55e'
-        },
-        {
-            position: { lat: 4.710423375781142, lng: -74.03220435970638 },
-            title: 'Universidad El Bosque',
-            category: 'education',
-            description: 'Educación superior de calidad.',
-            icon: '🎓',
-            color: '#3b82f6'
         }
     ];
-    
+
     // Add markers for points of interest
     pointsOfInterest.forEach(poi => {
         const poiMarker = new google.maps.Marker({
@@ -298,7 +282,7 @@ function initMap() {
                 strokeWeight: 2
             }
         });
-        
+
         const poiInfoWindow = new google.maps.InfoWindow({
             content: `
                 <div style="padding: 10px; max-width: 200px;">
@@ -307,73 +291,11 @@ function initMap() {
                 </div>
             `
         });
-        
+
         poiMarker.addListener('click', function() {
             poiInfoWindow.open(map, poiMarker);
         });
     });
-
-    // Restaurant Zone Polygon
-    const restaurantZoneCoords = [
-        { lat: 4.697763876061724, lng: -74.03041742415633 },
-        { lat: 4.696305482409698, lng: -74.02874131240979 },
-        { lat: 4.693988165901123, lng: -74.03283812616426 },
-        { lat: 4.693443774572404, lng: -74.03012976968962 }
-    ];
-
-    const restaurantZone = new google.maps.Polygon({
-        paths: restaurantZoneCoords,
-        strokeColor: "#fbbf24",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#fbbf24",
-        fillOpacity: 0.25,
-        map: map
-    });
-
-    // Find restaurants within the polygon
-    const placesService = new google.maps.places.PlacesService(map);
-    const request = {
-        bounds: new google.maps.LatLngBounds(),
-        type: ['restaurant']
-    };
-
-    restaurantZone.getPaths().forEach(function(path) {
-        path.forEach(function(latLng) {
-            request.bounds.extend(latLng);
-        });
-    });
-
-    placesService.nearbySearch(request, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            for (let i = 0; i < results.length; i++) {
-                // Check if the place is within the polygon
-                if (google.maps.geometry.poly.containsLocation(results[i].geometry.location, restaurantZone)) {
-                    createRestaurantMarker(results[i]);
-                }
-            }
-        }
-    });
-
-    function createRestaurantMarker(place) {
-        const marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
-            title: place.name,
-            icon: {
-                url: 'http://maps.google.com/mapfiles/ms/icons/restaurant.png',
-                scaledSize: new google.maps.Size(32, 32)
-            }
-        });
-
-        const infowindow = new google.maps.InfoWindow({
-            content: `<strong>${place.name}</strong><br>Rating: ${place.rating || 'N/A'}`
-        });
-
-        marker.addListener("click", () => {
-            infowindow.open(map, marker);
-        });
-    }
 }
 
 // Gallery functionality
