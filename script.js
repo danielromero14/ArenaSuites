@@ -138,21 +138,39 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Room reservation buttons
-    const roomButtons = document.querySelectorAll('.btn-room');
-    roomButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const roomCard = this.closest('.room-card');
-            const roomName = roomCard.querySelector('h3').textContent;
-            const roomPrice = roomCard.querySelector('.price-amount').textContent;
-            
-            // WhatsApp message for room reservation
-            const message = `Hola! Me interesa reservar ${roomName} por ${roomPrice} COP/noche. ¿Podrían darme más información sobre disponibilidad?`;
-            const whatsappUrl = `https://wa.me/573104896787?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        });
+    // Gallery Carousel Logic
+    const track = document.querySelector('.gallery-carousel-track');
+    const items = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-nav-next');
+    const prevButton = document.querySelector('.carousel-nav-prev');
+
+    let currentIndex = 0;
+    const itemsPerView = 4;
+    const totalItems = items.length;
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < totalItems - itemsPerView) {
+            currentIndex++;
+            updateCarousel();
+        }
     });
 
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    function updateCarousel() {
+        const itemWidth = items[0].getBoundingClientRect().width;
+        const gap = 16; // 1rem gap
+        const moveAmount = (itemWidth + gap) * currentIndex;
+        track.style.transform = `translateX(-${moveAmount}px)`;
+    }
+
+    // Recalculate on resize
+    window.addEventListener('resize', updateCarousel);
 });
 
 // Google Maps initialization
@@ -207,7 +225,7 @@ function initMap() {
                 "featureType": "water",
                 "elementType": "all",
                 "stylers": [
-                    {"color": "#3b82f6"},
+                    {"color": "#c5a572"}, // Using new accent color for water
                     {"visibility": "on"}
                 ]
             }
@@ -226,7 +244,7 @@ function initMap() {
         icon: {
             path: google.maps.SymbolPath.CIRCLE,
             scale: 10,
-            fillColor: "#1e3a8a",
+            fillColor: "#4a3f35", // Using new primary color
             fillOpacity: 1,
             strokeColor: "#ffffff",
             strokeWeight: 2
@@ -237,7 +255,7 @@ function initMap() {
     const infoWindow = new google.maps.InfoWindow({
         content: `
             <div style="padding: 10px;">
-                <h4 style="margin: 0 0 5px 0; color: #1e3a8a;">Arena Suites</h4>
+                <h4 style="margin: 0 0 5px 0; color: #4a3f35;">Arena Suites</h4>
                 <p style="margin: 0;">Carrera 30 #63-57<br>Bogotá, Colombia</p>
             </div>
         `
@@ -255,7 +273,7 @@ function initMap() {
             category: 'entertainment',
             description: 'Centro de eventos y espectáculos.',
             icon: '🏟️',
-            color: '#10b981'
+            color: '#c5a572' // Using new accent color
         },
         {
             position: { lat: 4.645833, lng: -74.0775 },
@@ -263,7 +281,7 @@ function initMap() {
             category: 'sports',
             description: 'Principal estadio de fútbol de Bogotá.',
             icon: '⚽',
-            color: '#ef4444'
+            color: '#4a3f35' // Using new primary color
         }
     ];
 
@@ -296,41 +314,6 @@ function initMap() {
             poiInfoWindow.open(map, poiMarker);
         });
     });
-}
-
-// Gallery functionality
-let currentPage = 1;
-const totalPages = 3;
-
-function showGalleryPage(page) {
-    const pages = document.querySelectorAll('.gallery-page');
-    const dots = document.querySelectorAll('.dot');
-    
-    // Validar rango
-    if (page < 1) page = totalPages;
-    if (page > totalPages) page = 1;
-    
-    // Ocultar todas las páginas
-    pages.forEach(p => p.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-    
-    // Mostrar página actual
-    if (pages[page - 1]) {
-        pages[page - 1].classList.add('active');
-    }
-    if (dots[page - 1]) {
-        dots[page - 1].classList.add('active');
-    }
-    
-    currentPage = page;
-}
-
-function changeGalleryPage(direction) {
-    showGalleryPage(currentPage + direction);
-}
-
-function currentGalleryPage(page) {
-    showGalleryPage(page);
 }
 
 // Lazy loading for images

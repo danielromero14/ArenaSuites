@@ -40,8 +40,8 @@
       "@id": "https://www.arenasuites.com.co/#organization",
       "name": "Arena Suites",
       "url": "https://www.arenasuites.com.co/",
-      "logo": "https://www.arenasuites.com.co/images/logo.png",
-      "image": "https://www.arenasuites.com.co/images/cama_doble1.jpg",
+      "logo": "https://www.arenasuites.com.co/imagenes/logo-arena-suites.jpg",
+      "image": "https://www.arenasuites.com.co/imagenes/suite-estandar-01.jpg",
       "description": "Arena Suites ofrece apartaestudios amoblados y flexibles en Bogotá. Somos la mejor alternativa a un hotel, con soluciones de alojamiento corporativo y para ejecutivos.",
       "address": {
         "@type": "PostalAddress",
@@ -117,12 +117,13 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="images/logoflat.png" alt="Logotipo de Arena Suites - Apartaestudios en Bogotá" style="height: 50px; object-fit: contain;">
+                <img src="imagenes/logo-arena-suites.jpg" alt="Logotipo de Arena Suites - Apartaestudios en Bogotá">
             </div>
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link">Inicio</a>
                 <a href="#rooms" class="nav-link">Habitaciones</a>
                 <a href="#amenities" class="nav-link">Servicios</a>
+                <a href="#gallery" class="nav-link">Galería</a>
                 <a href="#location" class="nav-link">Ubicación</a>
                 <a href="#contact" class="nav-link">Contacto</a>
                 <a href="https://hotels.cloudbeds.com/reservation/AcciF5" class="nav-link booking-btn" target="_blank">Reservar</a>
@@ -136,7 +137,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero" style="background-image: url('images/IMG-20250613-WA0025.jpg'); background-size: cover; background-position: center;">
+    <section id="home" class="hero" style="background-image: url('imagenes/suite-queen-01.jpg'); background-size: cover; background-position: center;">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2 class="hero-title">Bienvenido a Arena Suites</h2>
@@ -174,7 +175,7 @@
                 <!-- Room 1 -->
                 <div class="room-card">
                     <div class="room-image">
-                        <img src="images/IMG-20250613-WA0040.jpg" alt="Apartaestudio con 2 camas individuales en Arena Suites">
+                        <img src="imagenes/suite-estandar-01.jpg" alt="Apartaestudio con 2 camas individuales en Arena Suites">
                         <div class="room-badge">Más Elegida</div>
                     </div>
                     <div class="room-content">
@@ -208,7 +209,7 @@
                 <!-- Room 2 -->
                 <div class="room-card">
                     <div class="room-image">
-                        <img src="images/IMG-20250613-WA0041.jpg" alt="Apartaestudio con cama queen en Arena Suites">
+                        <img src="imagenes/suite-queen-01.jpg" alt="Apartaestudio con cama queen en Arena Suites">
                         <div class="room-badge badge-luxury">Premium</div>
                     </div>
                     <div class="room-content">
@@ -336,147 +337,70 @@
         <div class="container">
             <div class="section-header">
                 <h2>Nuestros Espacios</h2>
-                <p>Descubre cada rincón de Flat119</p>
+                <p>Explora cada rincón de Arena Suites</p>
             </div>
-            <div class="gallery-container">
-                <button class="gallery-nav gallery-nav-prev" onclick="changeGalleryPage(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="gallery-wrapper">
-                    <div class="gallery-slider" id="gallerySlider">
-                        <!-- Page 1 -->
-                        <div class="gallery-page active">
-                            <div class="gallery-grid">
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0035.jpg" alt="Lobby principal de Flat119 - Espacio de bienvenida en apartamentos amoblados">
-                                    <div class="gallery-overlay">
-                                        <h3>Lobby Principal</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0027.jpg" alt="Terraza panorámica de Flat119 con vistas a Bogotá Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Terraza con Vista</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0023.jpg" alt="Área de trabajo en Flat119 - Espacio coworking para ejecutivos">
-                                    <div class="gallery-overlay">
-                                        <h3>Espacio de Trabajo</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0032.jpg" alt="Rooftop Garden de Flat119 - Terraza con vistas en Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Rooftop Garden</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/fachada.jpg" alt="Fachada moderna de Flat119 - Apartamentos amoblados en La Carolina, Bogotá">
-                                    <div class="gallery-overlay">
-                                        <h3>Fachada Moderna</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0038.jpg" alt="Vista urbana desde balcón de apartamento Flat119 en Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Vistas de la Ciudad</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Page 2 -->
-                        <div class="gallery-page">
-                            <div class="gallery-grid">
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0021.jpg" alt="Interior de Suite Estándar Flat119 - Apartamento amoblado">
-                                    <div class="gallery-overlay">
-                                        <h3>Suite Estándar</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0022.jpg" alt="Cocina equipada en apartamento amoblado Flat119 Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Cocina Equipada</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0024.jpg" alt="Baño moderno en suite de Flat119">
-                                    <div class="gallery-overlay">
-                                        <h3>Baño Moderno</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0025.jpg" alt="Sala de estar cómoda en apartamento amoblado Flat119">
-                                    <div class="gallery-overlay">
-                                        <h3>Sala de Estar</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0026.jpg" alt="Habitación principal con cama Queen en Flat119 Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Habitación Principal</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0028.jpg" alt="Detalles de lujo y diseño interior en Flat119">
-                                    <div class="gallery-overlay">
-                                        <h3>Detalles de Lujo</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Page 3 -->
-                        <div class="gallery-page">
-                            <div class="gallery-grid">
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0029.jpg" alt="Zona común de Flat119 - Espacio social para huéspedes">
-                                    <div class="gallery-overlay">
-                                        <h3>Zona Común</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0030.jpg" alt="Pasillos iluminados y modernos en Flat119">
-                                    <div class="gallery-overlay">
-                                        <h3>Pasillos Iluminados</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0031.jpg" alt="Espacio de coworking en Flat119 - Ideal para nómadas digitales">
-                                    <div class="gallery-overlay">
-                                        <h3>Espacio Coworking</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0033.jpg" alt="Recepción 24h de Flat119 - Servicio al cliente en apartamentos amoblados">
-                                    <div class="gallery-overlay">
-                                        <h3>Recepción 24h</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0034.jpg" alt="Entrada principal de Flat119 - Acceso a apartamentos amoblados en Usaquén">
-                                    <div class="gallery-overlay">
-                                        <h3>Entrada Principal</h3>
-                                    </div>
-                                </div>
-                                <div class="gallery-item">
-                                    <img src="images/IMG-20250613-WA0036.jpg" alt="Terraza 360° de Flat119 - Vistas panorámicas de Bogotá">
-                                    <div class="gallery-overlay">
-                                        <h3>Terraza 360°</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="gallery-carousel-container">
+                <div class="gallery-carousel-wrapper">
+                    <div class="gallery-carousel-track">
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-estandar-01.jpg" alt="Suite Estándar"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-estandar-02.jpg" alt="Suite Estándar"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-estandar-03.jpg" alt="Suite Estándar"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-estandar-04.jpg" alt="Suite Estándar"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-estandar-05.jpg" alt="Suite Estándar"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-queen-01.jpg" alt="Suite Queen"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-queen-02.jpg" alt="Suite Queen"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-queen-03.jpg" alt="Suite Queen"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-queen-04.jpg" alt="Suite Queen"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-queen-05.jpg" alt="Suite Queen"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-doble-01.jpg" alt="Suite Doble"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-doble-02.jpg" alt="Suite Doble"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-doble-03.jpg" alt="Suite Doble"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-doble-04.jpg" alt="Suite Doble"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-doble-05.jpg" alt="Suite Doble"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-triple-01.jpg" alt="Suite Triple"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-triple-02.jpg" alt="Suite Triple"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-triple-03.jpg" alt="Suite Triple"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-triple-04.jpg" alt="Suite Triple"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/suite-triple-05.jpg" alt="Suite Triple"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/bano-01.jpg" alt="Baño"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/bano-02.jpg" alt="Baño"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/bano-03.jpg" alt="Baño"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/bano-04.jpg" alt="Baño"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/bano-05.jpg" alt="Baño"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/zona-comun-01.jpg" alt="Zona Común"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/zona-comun-02.jpg" alt="Zona Común"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/zona-comun-03.jpg" alt="Zona Común"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/zona-comun-04.jpg" alt="Zona Común"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/zona-comun-05.jpg" alt="Zona Común"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/recepcion-01.jpg" alt="Recepción"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/recepcion-02.jpg" alt="Recepción"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/recepcion-03.jpg" alt="Recepción"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/recepcion-04.jpg" alt="Recepción"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/recepcion-05.jpg" alt="Recepción"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/cocina-01.jpg" alt="Cocina"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/cocina-02.jpg" alt="Cocina"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/cocina-03.jpg" alt="Cocina"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/cocina-04.jpg" alt="Cocina"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/cocina-05.jpg" alt="Cocina"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/comedor-01.jpg" alt="Comedor"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/comedor-02.jpg" alt="Comedor"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/comedor-03.jpg" alt="Comedor"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/comedor-04.jpg" alt="Comedor"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/comedor-05.jpg" alt="Comedor"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/exterior-01.jpg" alt="Exterior"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/exterior-02.jpg" alt="Exterior"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/exterior-03.jpg" alt="Exterior"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/exterior-04.jpg" alt="Exterior"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/exterior-05.jpg" alt="Exterior"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/detalle-01.jpg" alt="Detalle"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/detalle-02.jpg" alt="Detalle"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/detalle-03.jpg" alt="Detalle"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/detalle-04.jpg" alt="Detalle"></div>
+                        <div class="gallery-carousel-item"><img src="imagenes/detalle-05.jpg" alt="Detalle"></div>
                     </div>
                 </div>
-                <button class="gallery-nav gallery-nav-next" onclick="changeGalleryPage(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="gallery-dots">
-                <span class="dot active" onclick="currentGalleryPage(1)"></span>
-                <span class="dot" onclick="currentGalleryPage(2)"></span>
-                <span class="dot" onclick="currentGalleryPage(3)"></span>
+                <button class="carousel-nav carousel-nav-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav carousel-nav-next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -570,7 +494,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact" style="background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('images/IMG-20250613-WA0030.jpg'); background-size: cover; background-position: center;">
+    <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
                 <h2>Contáctanos</h2>
