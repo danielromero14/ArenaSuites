@@ -41,3 +41,17 @@ Sitio web oficial de Arena Suites, un moderno y sofisticado apartahotel en el co
 ---
 
 *Sitio web desarrollado y actualizado para Arena Suites.*
+
+## Últimas Actualizaciones
+
+### 2025-09-17
+
+*   **Página Principal (`index.html`):**
+    *   Se ha optimizado la sección "Nuestros Servicios y Amenidades" para mostrar un máximo de 5 servicios clave, enfocándose en la primera impresión del huésped.
+    *   Se ha actualizado la sección "Ubicación Privilegiada" con información más precisa sobre:
+        *   **Centros Comerciales:** "Centro Comercial Galerías"
+        *   **Centros Médicos:** "Hospital Central Policía Nacional"
+        *   **Educación:** "Universidad Antonio Nariño"
+        *   **Recreación:** "Parque de los Novios", "Parque Simón Bolívar", "Parque Deportivo Salitre"
+*   **Mapa Interactivo (`script.js`):**
+    *   Se han añadido marcadores en el mapa para las ubicaciones de "Parque de los Novios", "Parque Simón Bolívar" y "Parque Deportivo Salitre", mejorando la visibilidad de los puntos de interés recreativos cercanos.

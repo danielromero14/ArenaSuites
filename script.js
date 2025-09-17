@@ -282,6 +282,30 @@ function initMap() {
             description: 'Principal estadio de fútbol de Bogotá.',
             icon: '⚽',
             color: '#4a3f35' // Using new primary color
+        },
+        {
+            position: { lat: 4.65556, lng: -74.08199 },
+            title: 'Parque de los Novios',
+            category: 'recreation',
+            description: 'Parque con lago, zonas verdes y actividades recreativas.',
+            icon: '🌳',
+            color: '#22c55e'
+        },
+        {
+            position: { lat: 4.65806, lng: -74.09389 },
+            title: 'Parque Simón Bolívar',
+            category: 'recreation',
+            description: 'El parque urbano más grande de Bogotá, con amplias zonas verdes y eventos.',
+            icon: '🌳',
+            color: '#22c55e'
+        },
+        {
+            position: { lat: 4.66341, lng: -74.089458 },
+            title: 'Parque Deportivo Salitre',
+            category: 'recreation',
+            description: 'Complejo deportivo con diversas instalaciones para actividades físicas.',
+            icon: '🌳',
+            color: '#22c55e'
         }
     ];
 
